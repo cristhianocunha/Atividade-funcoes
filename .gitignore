@@ -1,5 +1,5 @@
 # Ignorar um arquivo específico
 .vscode
-
+atividade1
 # Ignorar todos os arquivos binários de uma pasta
 *.bin
