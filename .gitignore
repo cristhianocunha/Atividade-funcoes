@@ -2,4 +2,4 @@
 .vscode
 
 # Ignorar todos os arquivos binários de uma pasta
-pasta/*.bin
+*.bin
