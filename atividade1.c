@@ -1,22 +1,24 @@
 #include <stdio.h>
 
 // Protótipos
-void cabecalho(); // void sem parâmetros
-float calcularMedia(float n1, float n2); // com retorno
-void imprimirResultado(float media); // void com parâmetro
+void cabecalho();
+float calcularMedia(float notas[], int quantidade);
+void imprimirResultado(float media);
 
 int main() {
-    float nota1, nota2;
+    int quantidade = 2;
+    float notas[quantidade];
     
     cabecalho();
-    
-    printf("Digite a primeira nota: ");
-    scanf("%f", &nota1);
-    printf("Digite a segunda nota: ");
-    scanf("%f", &nota2);
+    printf("Qual e quantidade de notas? \n");
+    scanf("%d", &quantidade);
+   for (int i = 0; i < quantidade; ++i ){
+        printf("Digite nota %d \n", i + 1);
+        scanf("%f", &notas[i]);
+    }
     
     // Chamando função que chama outra função
-    imprimirResultado(calcularMedia(nota1, nota2));
+    imprimirResultado(calcularMedia(notas, quantidade));
     
     return 0;
 }
@@ -25,8 +27,13 @@ void cabecalho() {
     printf("=== CALCULADORA DE MÉDIAS ===\n\n");
 }
 
-float calcularMedia(float a, float b) {
-    return (a + b) / 2;
+float calcularMedia(float notas[], int quantidade) {
+    float somasdasmedias = 0;
+    for (int i = 0; i < quantidade; ++i ){
+        somasdasmedias += notas[i];
+    }
+    
+    return somasdasmedias / quantidade;
 }
 
 void imprimirResultado(float media) {
