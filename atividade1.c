@@ -29,7 +29,7 @@ float calcularMedia(float a, float b) {
     return (a + b) / 2;
 }
 
-// void imprimirResultado(float media) {
+void imprimirResultado(float media) {
     printf("\nMédia calculada: %.2f\n", media);
     if(media >= 6) {
         printf("Situação: Aprovado!\n");
