@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // Para malloc()
+
 // Protótipos
 void cabecalho();
 float calcularMedia(float notas[], int quantidade);
@@ -35,11 +36,9 @@ void cabecalho()
     printf("=== CALCULADORA DE MÉDIAS ===\n\n");
 }
 
-float calcularMedia(float notas[], int quantidade)
-{
+float calcularMedia(float notas[], int quantidade) {
     float somasdasmedias = 0;
-    for (int i = 0; i < quantidade; ++i)
-    {
+    for (int i = 0; i < quantidade; ++i ){
         somasdasmedias += notas[i];
     }
 
@@ -49,8 +48,7 @@ float calcularMedia(float notas[], int quantidade)
 void imprimirResultado(float media)
 {
     printf("\nMédia calculada: %.2f\n", media);
-    if (media >= 6)
-    {
+    if(media >= 6) {
         printf("Situação: Aprovado!\n");
     }
     else
